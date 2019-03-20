@@ -47,6 +47,10 @@
       text-shadow: 2px 2px 1px #000;
       padding-top: 40vh;
       padding-left: 10vh;
+
+      margin-bottom: 40px;
+      font-size: 48px;
+      font-weight: 700;
     }
 
 
@@ -81,24 +85,28 @@
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
-        <a href="#intro" class="scrollto"><img src="<?= base_url() ?>/assets/img/lrs-logo.png" alt="" class="img-fluid"></a>
+        <a href="<?=base_url() ?>" class="scrollto"><img src="<?= base_url() ?>/assets/img/lrs-logo.png" alt="" class="img-fluid"></a>
       </div>
 
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          <li class="active"><a href="#intro">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
+          <li class="active"><a href="<?=base_url() ?>">Home</a></li>
+          <li class="drop-down"><a href="#">Profile</a>
+            <ul>
+                <li><a href="<?= base_url('profile') ?>">Profile dan Riwayat Singkat</a></li>
+                <li><a href="#">Dewan Komisaris</a></li>
+                <li><a href="#">Dewan Direksi</a></li>
+                <li><a href="#">Struktur Organisasi</a></li>
+            </ul>
+          </li>
           <li class="drop-down"><a href="#">Products</a>
             <ul>
-                <li><a href="#">Maintenances</a></li>
+                <li><a href="<?=base_url('maintenances') ?>">Maintenances</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Trainings</a></li>
             </ul>
           </li>
-
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">News</a></li>
           <li><a href="#contact">Contact Us</a></li>
         </ul>
       </nav><!-- .main-nav -->
