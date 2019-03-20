@@ -584,7 +584,127 @@ h6 {
   font-size: 24px;
 }
 
-/* Services Section
+
+/* Maintenances Section
+--------------------------------*/
+
+#maintenances {
+  padding: 60px 0 40px 0;
+  box-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+}
+
+#maintenances .box {
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 10px 40px 10px;
+  background: #fff;
+  
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#maintenances .box:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+
+#maintenances .icon {
+  position: absolute;
+  left: -10px;
+  top: calc(50% - 32px);
+}
+
+#maintenances .icon i {
+  font-size: 64px;
+  line-height: 1;
+  transition: 0.5s;
+}
+
+#maintenances .title {
+  margin-left: 40px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+#maintenances .title a {
+  color: #111;
+}
+
+#maintenances .box:hover .title a {
+  /* color: #007bff; */
+  color: #277bd4;
+  /* backgorund: url('<?= base_url() ?>/assets/img/IMG_5602.jpg'); */
+}
+
+#maintenances .description {
+  font-size: 14px;
+  margin-left: 40px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+
+#maintenances .maintenances-info {
+  width: 50%;
+  float: left;
+}
+
+#maintenances .maintenances-info h2 {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+#maintenances .maintenances-info h2 span {
+  /* color: #74b5fc; */
+  color: #1165c0ce;
+  text-decoration: underline;
+}
+
+#maintenances .maintenances-info .btn-get-started,
+#maintenances .maintenances-info .btn-services {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 0 20px 20px 0;
+  color: #fff;
+}
+
+#maintenances .maintenances-info .btn-get-started {
+  background: #007bff;
+  border: 2px solid #007bff;
+  color: #fff;
+}
+
+#maintenances .maintenances-info .btn-get-started:hover {
+  background: none;
+  border-color: #fff;
+  color: #fff;
+}
+
+#maintenances .maintenances-info .btn-services {
+  border: 2px solid #fff;
+}
+
+#maintenances .maintenances-info .btn-services:hover {
+  background: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+/* end maintenances */
+
+
+
+/* maintenances Section
 --------------------------------*/
 
 #services {
@@ -641,6 +761,11 @@ h6 {
   line-height: 24px;
   margin-bottom: 0;
 }
+
+
+/* :end services */
+
+
 
 #why-us {
   padding: 60px 0;
@@ -721,7 +846,8 @@ h6 {
 --------------------------------*/
 
 #portfolio {
-  padding: 60px 0;
+  /* padding: 60px 0; */
+  padding-top: 10px;
   box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -1279,7 +1405,7 @@ h6 {
 }
 
 #footer .footer-top .footer-contact {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 #footer .footer-top .footer-contact p {
@@ -1361,6 +1487,13 @@ h6 {
     margin: 0 auto 25px auto;
   }
 
+  #maintenances .intro-info {
+    width: 80%;
+    float: none;
+    margin: auto;
+    text-align: center;
+  }
+
   #intro .intro-info {
     width: 80%;
     float: none;
@@ -1380,8 +1513,17 @@ h6 {
 }
 
 @media (max-width: 767px) {
+  #maintenances .maintenances-info {
+    width: 100%;
+  }
+
   #intro .intro-info {
     width: 100%;
+  }
+
+  #maintenances .maintenances-info h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
   }
 
   #intro .intro-info h2 {
@@ -1413,4 +1555,36 @@ h6 {
   #intro {
     padding: 100px 0 20px 0;
   }
+
+  #maintenances .box {
+  /* padding: 60px; */
+  position: relative;
+  overflow: hidden;
+  /* border-radius: 10px; */
+  /* margin: 0 10px 40px 10px; */
+  background: #fff;
+  
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+  }
+
+  #maintenances .maintenances-info {
+    width: 100%;
+  }
+
+  #intro .intro-info {
+    width: 100%;
+  }
+
+  #maintenances .maintenances-info h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
+  }
+
+  #intro .intro-info h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
+  }
+
+
 }
