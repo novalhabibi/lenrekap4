@@ -8,7 +8,7 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="<?= base_url() ?>/assets/img/favicon.png" rel="icon">
+  <link href="<?= base_url() ?>/assets/img/favicon.ico" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -38,6 +38,7 @@
   <style>
     .caption {
       position: absolute;
+      
       /* font-size: 1.5em; */
       top: 0;
       /* left: 15px; */
@@ -80,7 +81,7 @@
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
-        <a href="#intro" class="scrollto"><img src="<?= base_url() ?>/assets/img/logo.png" alt="" class="img-fluid"></a>
+        <a href="#intro" class="scrollto"><img src="<?= base_url() ?>/assets/img/lrs-logo.png" alt="" class="img-fluid"></a>
       </div>
 
       <nav class="main-nav float-right d-none d-lg-block">
@@ -91,6 +92,8 @@
           <li class="drop-down"><a href="#">Products</a>
             <ul>
                 <li><a href="#">Maintenances</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Trainings</a></li>
             </ul>
           </li>
 
