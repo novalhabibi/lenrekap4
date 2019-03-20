@@ -15,37 +15,37 @@
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/client-1.png" class="img-fluid" alt="">
+              <img src="<?= base_url() ?>/assets/img/clients/akademiperkretaapian.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/client-2.png" class="img-fluid" alt="">
+              <img src="<?= base_url() ?>/assets/img/clients/Angkasapura.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/client-3.png" class="img-fluid" alt="">
+              <img src="<?= base_url() ?>/assets/img/clients/Direktoratkretaapi.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/client-4.png" class="img-fluid" alt="">
+              <img src="<?= base_url() ?>/assets/img/clients/KAI.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/client-5.png" class="img-fluid" alt="">
+              <img src="<?= base_url() ?>/assets/img/clients/LEN.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/client-6.png" class="img-fluid" alt="">
+              <img src="<?= base_url() ?>/assets/img/clients/LRS.png" class="img-fluid" alt="">
             </div>
           </div>
           
@@ -143,23 +143,15 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-4 col-md-6 footer-info">
-            <h3>NewBiz</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+          <div class="col-lg-6 col-md-6 footer-links">
+            <h4>Our Website</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
               <li><a href="#">Terms of service</a></li>
               <li><a href="#">Privacy policy</a></li>
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-contact">
+          <div class="col-lg-6 col-md-6 footer-newsletter">
             <h4>Contact Us</h4>
             <p>
               A108 Adam Street <br>
@@ -176,17 +168,9 @@
               <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
               <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
             </div>
-
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit"  value="Subscribe">
-            </form>
-          </div>
-
+          
         </div>
       </div>
     </div>
