@@ -54,5 +54,13 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['default_controller'] = 'FrontendController';
+$route['profile']='FrontendController/profile';
+
+// Admin Platform
+$route['admin']= "AdminController";
+
+
 
 $route['maintenances']='FrontendController/maintenances';
+
+
