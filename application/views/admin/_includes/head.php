@@ -10,7 +10,7 @@
 
   <!-- Custom fonts for this template-->
   <link href="<?= base_url() ?>/assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
+    <link href="<?= base_url() ?>/assets/img/favicon.ico" rel="icon">
   <!-- Page level plugin CSS-->
   <link href="<?= base_url() ?>/assets/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 

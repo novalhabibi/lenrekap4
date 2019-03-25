@@ -58,6 +58,9 @@ $route['profile']='FrontendController/profile';
 
 // Admin Platform
 $route['admin']= "AdminController";
+$route['admin/login']= "AdminController/login";
+$route['admin/logout']= "AdminController/logout";
+$route['admin/cek_login']= "AdminController/cek_login";
 
 
 
