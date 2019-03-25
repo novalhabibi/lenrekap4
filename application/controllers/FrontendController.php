@@ -8,6 +8,20 @@ class FrontendController extends CI_Controller
         $this->load->view('pages/home');
         $this->load->view('templates/footer');
     }
+
+    public function maintenances()
+    {
+        $this->load->view('templates/header');
+        $this->load->view('pages/maintenances');
+        $this->load->view('templates/footer');
+    }
+
+    public function profile()
+    {
+        $this->load->view('templates/header');
+        $this->load->view('pages/profile');
+        $this->load->view('templates/footer');
+    }
 }
 
 

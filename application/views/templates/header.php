@@ -38,36 +38,48 @@
   <style>
     .caption {
       position: absolute;
-      
-      /* font-size: 1.5em; */
-      top: 0;
+      color: #fff;
+      /* margin-bottom: 40px;
+      font-size: 48px;
+      font-weight: 700; */
+      /* font-size: 1.5em;*/
+      top: 0; 
       /* left: 15px; */
       /* border: 1px solid; */
-      color: #1900ff;
-      text-shadow: 2px 2px 1px #000;
-      padding-top: 40vh;
+      /* color: #1900ff; */
+      /* text-shadow: 2px 2px 1px #000; */
+      padding-top: 30vh;
       padding-left: 10vh;
 
-      margin-bottom: 40px;
+      /* margin-bottom: 40px;
       font-size: 48px;
-      font-weight: 700;
+      font-weight: 700; */
     }
 
-
-  @media (max-width: 767px) {
+  
+@media (max-width: 574px) {
   .caption {
-    width: 100%;
-    position: absolute;
-      font-size: 11px;
-      top: 0;
+      position: absolute;
+      color: #fff;
+      /* margin-bottom: 40px;
+      font-size: 48px;
+      font-weight: 700; */
+      /* font-size: 1.5em;*/
+      top: 0; 
       /* left: 15px; */
       /* border: 1px solid; */
-      color: #1900ff;
-      text-shadow: 2px 2px 1px #000;
-      padding-top: 20vh;
-      padding-left: 2vh;
+      /* color: #1900ff; */
+      /* text-shadow: 2px 2px 1px #000; */
+      padding-top: 0vh;
+      padding-left: 0vh;
+
+      /* margin-bottom: 40px;
+      font-size: 48px;
+      font-weight: 700; */
+    }
+
   }
-  }
+  
   </style>
 
 
