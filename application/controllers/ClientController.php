@@ -32,6 +32,7 @@ class ClientController extends CI_Controller
         if ($validation->run()) {
             $client->save();
             $this->session->set_flashdata('success','Berhasil disimpan');
+            redirect('admin/clients');
         }
         
         // if (isset($_POST["submit"])) {
@@ -69,9 +70,17 @@ class ClientController extends CI_Controller
         $this->load->view("admin/clients/edit", $data);
 
     }
+
+    public function update()
+    {
+         $client = $this->clientmodel;
+         $client->update();
+            $this->session->set_flashdata('success','Berhasil update');
+            redirect('admin/clients');
+    }
     
     
-    public function delete()
+    public function hapus()
     {
         if($this->session->userdata('status') != "login"){
 			redirect(base_url("admin"));

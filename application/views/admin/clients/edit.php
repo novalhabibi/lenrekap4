@@ -22,37 +22,34 @@
         <!-- DataTables Example -->
 <div class="card card-info">
                         <div class="card-header bg-info">
-                            Edit data maintenance
+                            Edit data client
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-lg-6">
                                 <?php echo validation_errors(); ?>
 
-                                <?php echo form_open_multipart('admin/maintenances/update'); ?>
+                                <?php echo form_open_multipart('admin/clients/update'); ?>
                                     
                                         <div class="form-group">
-                                            <label>Nama maintenance</label>
-                                            <input type="hidden" name="id" value="<?= $maintenance->id ?>">
-                                            <input class="form-control" name="nama_maintenance" value="<?= $maintenance->nama_maintenance ?>">
+                                            <label>Nama client</label>
+                                            <input type="hidden" name="id" value="<?= $client->id ?>">
+                                            <input class="form-control" name="nama_client" value="<?= $client->nama_client ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Link</label>
-                                            <input  class="form-control" disabled name="link_maintenance" value="<?= $maintenance->link_maintenance ?>">
+                                            <input  class="form-control" name="link_client" value="<?= $client->link_client ?>">
                                         </div>
                                         <div class="form-group">
-                                            <label>Gambar maintenance</label>
-                                            <input type="hidden" name="gambar_lama" value="<?= $maintenance->gambar_maintenance ?>">
-                                            <img src="<?= base_url() ?><?= $maintenance->gambar_maintenance ?>" alt="No Image" width="50%" height="50%">
+                                            <label>Gambar client</label>
+                                            <input type="hidden" name="gambar_lama" value="<?= $client->icon_client ?>">
+                                            <img src="<?= base_url() ?><?= $client->icon_client ?>" alt="No Image" width="50%" height="50%">
                                         </div>
                                         <div class="form-group">
-                                            <label>Ganti gambar maintenance</label>
-                                            <input type="file" accept="image/*" name="gambar_maintenance">
+                                            <label>Ganti gambar client</label>
+                                            <input type="file" accept="image/*" name="icon_client">
                                         </div>
-                                        <div class="form-group">
-                                            <label>Text area</label>
-                                            <textarea class="form-control" name="deskripsi" rows="3"><?= $maintenance->deskripsi ?></textarea>
-                                        </div>
+                                        
                                         <button type="submit" name="submit" class="btn btn-info">Simpan</button>
                                         
                                     </form>

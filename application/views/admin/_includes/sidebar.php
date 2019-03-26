@@ -36,4 +36,9 @@
           <i class="fas fa-fw fa-users"></i>
           <span>Clients</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('admin/sliders') ?>">
+          <i class="fas fa-fw fa-film"></i>
+          <span>Sliders</span></a>
+      </li>
     </ul>

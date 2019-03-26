@@ -28,8 +28,8 @@
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Data Clients
-            <a href="<?= site_url('admin/clients/tambah') ?>" class="btn btn-info btn-sm float-right">Tambah</a>
+            Data sliders
+            <a href="<?= site_url('admin/sliders/tambah') ?>" class="btn btn-info btn-sm float-right">Tambah</a>
           </div>
 
           <div class="card-body">
@@ -37,34 +37,46 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Nama client</th>
+                    <th>Judul slider</th>
                     <th>Gambar</th>
-                    
-                    <th>Link</th>
+                    <th>Deskrpisi</th>
+                    <th>Status</th>
                     <th>Edit</th>
                     <th>Hapus</th>
                   </tr>
                 </thead>
                 <tbody>
                 <?php
-                foreach ($clients as $client) {
+                foreach ($sliders as $slider) {
                 ?>
                   <tr>
-                    <td><?= $client->nama_client ?></td>
+                    <td><?= $slider->judul ?></td>
                     <td>
                         
-                    <a href="<?= base_url() ?><?= $client->icon_client ?>" data-toggle="lightbox" data-title="<?= $client->nama_client ?>">
+                    <a href="<?= base_url() ?><?= $slider->gambar ?>" data-toggle="lightbox" data-title="<?= $slider->judul ?>" data-footer="<?= $slider->deskripsi ?>">
                        Lihat gambar
                     </a>
 
                     </td>
-                    
-                    <td><?= $client->link_client ?></td>
+                    <td><?= substr($slider->deskripsi,0,10) ?></td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="<?= site_url('admin/clients/edit/'.$client->id) ?>">Edit</a>
+                    <?php if ($slider->status==1): ?>
+                    <!-- <a class="btn btn-primary btn-sm">Aktif</a> -->
+                    <span class="text-primary" data-toggle="tooltip" data-placement="top" title="Aktif">
+                    <i class="fas fa-eye "></i>
+                    </span>
+                    
+                    <?php else:?>
+                    <span class="text-danger" data-toggle="tooltip" data-placement="top" title="Tidak Aktif">
+                    <i class="fas fa-eye-slash "></i>
+                    </span>
+                    <?php endif;?>
                     </td>
                     <td>
-                        <a data-toggle="modal" onclick="deleteConfirm('<?= site_url('admin/client/hapus/'.$client->id) ?>')" href="#" class="btn btn-danger btn-sm" data-target="#deleteConfirm" >
+                        <a class="btn btn-primary btn-sm" href="<?= site_url('admin/sliders/edit/'.$slider->id) ?>">Edit</a>
+                    </td>
+                    <td>
+                        <a data-toggle="modal" onclick="deleteConfirm('<?= site_url('admin/slider/hapus/'.$slider->id) ?>')" href="#" class="btn btn-danger btn-sm" data-target="#deleteConfirm" >
                         <i class="fas fa-eyes"></i>
                         Hapus</a>
                     </td>

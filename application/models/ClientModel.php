@@ -18,7 +18,7 @@ class ClientModel extends CI_Model
         $config['file_name']            =url_title($nama_client, 'dash', TRUE);
         // $config['file_name']            =$this->link_client;
         // $handle = ($_FILES["gambar"]["tmp_name"]);
-        // $config['file_name']        = $config['full_path'];
+        $config['overwrite']        = true;
         $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('icon_client')) {

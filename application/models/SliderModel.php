@@ -18,7 +18,7 @@ class SliderModel extends CI_Model
         // $config['file_name']            =$this->judul;
         $judul = $this->judul;
         $config['file_name']            =url_title($judul, 'dash', TRUE);
-        // $config['overwrite']        = true;
+        $config['overwrite']        = true;
         // $handle = ($_FILES["gambar"]["tmp_name"]);
         // $config['file_name']        = $config['full_path'];
         $this->load->library('upload', $config);

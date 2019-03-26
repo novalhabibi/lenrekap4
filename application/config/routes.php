@@ -97,11 +97,19 @@ $route['admin/news/hapus/(:any)']= "NewsController/hapus/$1";
 
 // Clients
 $route['admin/clients']= "ClientController";
-$route['admin/clients/add']= "ClientController/add";
+$route['admin/clients/tambah']= "ClientController/add";
 $route['admin/clients/edit']= "ClientController";
 $route['admin/clients/edit/(:any)']= "ClientController/edit/$1";
 $route['admin/clients/update']= "ClientController/update";
-$route['admin/clients/hapus/(:any)']= "ClientController/hapus/$1";
+$route['admin/client/hapus/(:any)']= "ClientController/hapus/$1";
+
+// Sliders
+$route['admin/sliders']= "SliderController";
+$route['admin/sliders/add']= "SliderController/add";
+$route['admin/sliders/edit']= "SliderController";
+$route['admin/sliders/edit/(:any)']= "SliderController/edit/$1";
+$route['admin/sliders/update']= "SliderController/update";
+$route['admin/sliders/hapus/(:any)']= "SliderController/hapus/$1";
 
 
 

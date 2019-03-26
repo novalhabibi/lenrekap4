@@ -22,31 +22,28 @@
         <!-- DataTables Example -->
 <div class="card card-info">
                         <div class="card-header bg-info">
-                            Tambah data maintenance
+                            Tambah data client
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-lg-6">
                                 <?php echo validation_errors(); ?>
 
-                                <?php echo form_open_multipart('admin/maintenances/tambah'); ?>
+                                <?php echo form_open_multipart('admin/clients/tambah'); ?>
                                     
                                         <div class="form-group">
-                                            <label>Nama maintenance</label>
-                                            <input class="form-control" name="nama_maintenance" placeholder="Nama maintenance">
+                                            <label>Nama client</label>
+                                            <input class="form-control" name="nama_client" placeholder="Nama client">
                                         </div>
                                         <div class="form-group">
                                             <label>Link</label>
-                                            <input class="form-control" disabled name="link_maintenance" placeholder="link maintenance">
+                                            <input class="form-control" name="link_client" placeholder="link client">
                                         </div>
                                         <div class="form-group">
-                                            <label>Gambar maintenance</label>
-                                            <input type="file" accept="image/*" name="gambar_maintenance">
+                                            <label>Gambar client</label>
+                                            <input type="file" accept="image/*" name="icon_client">
                                         </div>
-                                        <div class="form-group">
-                                            <label>Text area</label>
-                                            <textarea class="form-control" name="deskripsi" rows="3"></textarea>
-                                        </div>
+                                       
                                         <button type="submit" name="submit" class="btn btn-info">Simpan</button>
                                         
                                     </form>
