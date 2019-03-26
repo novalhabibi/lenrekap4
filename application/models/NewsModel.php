@@ -23,7 +23,7 @@ class NewsModel extends CI_Model
         // $config['file_name']            =$tujuan.$data[orig_name] ;
          
         $config['file_name']            =$this->slug;
-        // $config['overwrite']        = true;
+        $config['overwrite']        = true;
         $this->load->library('upload', $config);
         
         $field_name = "maintenance".date("Y-m-d");
@@ -63,6 +63,15 @@ class NewsModel extends CI_Model
         return $this->db->get($this->_table)->result();
     }
 
+    function getAllJoin() {
+
+        $this->db->select ( '*' ); 
+        $this->db->from ( 'news' );
+        $this->db->join ( 'admins', 'admins.id = news.id_admin' , 'left' );
+        $query = $this->db->get ();
+        return $query->result ();
+    }
+
     public function newspertama()
     {
         $this->db->order_by('id', 'DESC');
@@ -97,7 +106,8 @@ class NewsModel extends CI_Model
         $this->gambar=$this->_uploadGambar();
         $this->deskripsi=$post["deskripsi"];
         $this->tgl_posting=date("Y-m-d H:i:s");
-        $this->id_admin=1;
+        $id_admin=$this->session->userdata('id');
+        $this->id_admin=$id_admin;
 
         
         $this->db->insert($this->_table,$this);
