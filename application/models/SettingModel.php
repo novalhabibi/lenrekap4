@@ -118,7 +118,7 @@ class SettingModel extends CI_Model
         return $this->db->get($this->_table)->result();
     }
 
-    public function maintenancepertama()
+    public function settingpertama()
     {
         $this->db->order_by('id', 'DESC');
     //    return $this->db->get_where($this->_table,["status"=>1])->row();

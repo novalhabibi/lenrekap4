@@ -7,7 +7,10 @@ class AdminController extends CI_Controller
         parent::__construct();
         if($this->session->userdata('status') != "login"){
 			// redirect(base_url("admin/login"));
-		}
+        }
+        
+        
+        $this->load->model("settingmodel");
      
     }
 
@@ -81,6 +84,24 @@ class AdminController extends CI_Controller
     // $this->session->sess_destroy();
 	redirect(base_url('admin'));
     
+    }
+
+
+    public function settings()
+    {
+        $data["setting"]=$this->settingmodel->settingpertama();
+        
+        // print_r($this->settingmodel->getAll());
+
+        // echo "Data";
+        $this->load->view("admin/settings",$data);
+    }
+
+    public function update_setting()
+    {
+        $this->settingmodel->update();
+        $this->session->set_flashdata('success','Berhasil disimpan');
+        redirect('admin/setting');
     }
     
 }

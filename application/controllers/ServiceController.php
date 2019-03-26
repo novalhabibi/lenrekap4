@@ -18,13 +18,13 @@ class ServiceController extends CI_Controller
 
     public function index()
     {
-        if (! $this->session->userdata('logged')) {
-            redirect("admin/auth");
-        }
+        if($this->session->userdata('status') != "login"){
+			redirect(base_url("admin"));
+		}
         
         $data["services"] = $this->servicemodel->getAll();
 
-        $this->load->view("admin/services/list",$data);
+        $this->load->view("admin/services/index",$data);
     }
 
 
@@ -47,9 +47,9 @@ class ServiceController extends CI_Controller
 
     public function add()
     {
-        if (! $this->session->userdata('logged')) {
-            redirect("admin/auth");
-        }
+        if($this->session->userdata('status') != "login"){
+			redirect(base_url("admin"));
+		}
 
         $service = $this->servicemodel;
         $validation = $this->form_validation;
@@ -58,17 +58,18 @@ class ServiceController extends CI_Controller
         if ($validation->run()) {
             $service->save();
             $this->session->set_flashdata('success','Berhasil disimpan');
+            redirect('admin/services');
         }
         
-        $this->load->view("admin/services/new_form");
+        $this->load->view("admin/services/tambah");
         
     }
 
     public function edit()
     {
-        if (! $this->session->userdata('logged')) {
-            redirect("admin/auth");
-        }
+        if($this->session->userdata('status') != "login"){
+			redirect(base_url("admin"));
+		}
 
         $id = $this->uri->segment(4);
         
@@ -85,16 +86,25 @@ class ServiceController extends CI_Controller
         
         $data["service"]= $service->getById($id);
         if(!$data["service"]) show_404();
-        $this->load->view("admin/services/edit_form", $data);
+        $this->load->view("admin/services/edit", $data);
+
+    }
+
+    public function update()
+    {
+        $service = $this->servicemodel;
+        $service->update();
+        $this->session->set_flashdata('success','Berhasil update');
+        redirect('admin/services');
 
     }
     
     
     public function delete()
     {
-        if (! $this->session->userdata('logged')) {
-            redirect("admin/auth");
-        }
+        if($this->session->userdata('status') != "login"){
+			redirect(base_url("admin"));
+		}
         
         $id = $this->uri->segment(4);
         $this->servicemodel->delete($id);

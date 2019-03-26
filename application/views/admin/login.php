@@ -38,7 +38,7 @@
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="required">
+              <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="required">
               <label for="inputPassword">Password</label>
             </div>
           </div>
@@ -54,12 +54,12 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?= base_ulr() ?>/assets/jquery/jquery.min.js"></script>
+  <script src="<?= base_ulr() ?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
+  <script src="<?= base_ulr() ?>/assets/jquery-easing/jquery.easing.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.0.0.slim.min.js"></script>
 </body>
 
 </html>

@@ -73,14 +73,32 @@ $route['admin/training/hapus/(:any)']= "TrainingController/hapus/$1";
 
 // Maintenances
 $route['admin/maintenances']= "MaintenanceController";
-$route['admin/maintenances/tambah']= "MaintenanceController/tambah";
+$route['admin/maintenances/tambah']= "MaintenanceController/add";
 $route['admin/maintenances/edit']= "MaintenanceController";
 $route['admin/maintenances/edit/(:any)']= "MaintenanceController/edit/$1";
 $route['admin/maintenances/update']= "MaintenanceController/update";
 $route['admin/maintenance/hapus/(:any)']= "MaintenanceController/hapus/$1";
 
+// Services
+$route['admin/services']= "ServiceController";
+$route['admin/services/tambah']= "ServiceController/add";
+$route['admin/services/edit']= "ServiceController";
+$route['admin/services/edit/(:any)']= "ServiceController/edit/$1";
+$route['admin/services/update']= "ServiceController/update";
+$route['admin/service/hapus/(:any)']= "ServiceController/hapus/$1";
+
+// News
+$route['admin/news']= "NewsController";
+$route['admin/news/add']= "NewsController/add";
+$route['admin/news/edit']= "NewsController";
+$route['admin/news/edit/(:any)']= "NewsController/edit/$1";
+$route['admin/news/update']= "NewsController/update";
+$route['admin/news/hapus/(:any)']= "NewsController/hapus/$1";
 
 
+
+$route['admin/setting']='AdminController/settings';
+$route['admin/update_setting']='AdminController/update_setting';
 $route['maintenances']='FrontendController/maintenances';
 
 

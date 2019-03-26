@@ -22,26 +22,26 @@
         <!-- DataTables Example -->
 <div class="card card-info">
                         <div class="card-header bg-info">
-                            Tambah data maintenance
+                            Tambah data service
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-lg-6">
                                 <?php echo validation_errors(); ?>
 
-                                <?php echo form_open_multipart('admin/maintenances/tambah'); ?>
+                                <?php echo form_open_multipart('admin/services/tambah'); ?>
                                     
                                         <div class="form-group">
-                                            <label>Nama maintenance</label>
-                                            <input class="form-control" name="nama_maintenance" placeholder="Nama maintenance">
+                                            <label>Nama service</label>
+                                            <input class="form-control" name="nama_service" placeholder="Nama service">
                                         </div>
                                         <div class="form-group">
                                             <label>Link</label>
-                                            <input class="form-control" disabled name="link_maintenance" placeholder="link maintenance">
+                                            <input class="form-control" disabled name="link_service" placeholder="link service">
                                         </div>
                                         <div class="form-group">
-                                            <label>Gambar maintenance</label>
-                                            <input type="file" accept="image/*" name="gambar_maintenance">
+                                            <label>Gambar service</label>
+                                            <input type="file" accept="image/*" name="gambar_service">
                                         </div>
                                         <div class="form-group">
                                             <label>Text area</label>

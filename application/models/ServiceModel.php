@@ -16,7 +16,7 @@ class ServiceModel extends CI_Model
         $config['upload_path']          = $tujuan;
         $config['allowed_types']        = 'gif|jpg|png';
         $config['file_name']            =$this->link_service;
-        // $config['overwrite']        = true;
+        $config['overwrite']        = true;
 
         // $handle = ($_FILES["gambar"]["tmp_name"]);
         // $config['file_name']        = $config['full_path'];

@@ -17,8 +17,18 @@
           <span>Maintenances</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<?= site_url('admin/services') ?>">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+          <span>Services</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('admin/news') ?>">
+          <i class="fas fa-fw fa-table"></i>
+          <span>News</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('admin/setting') ?>">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Setting</span></a>
       </li>
     </ul>

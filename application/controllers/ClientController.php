@@ -7,7 +7,7 @@ class ClientController extends CI_Controller
     {
         parent:: __construct();
         if (! $this->session->userdata('logged')) {
-            redirect("admin/auth");
+            // redirect("admin/auth");
         }
         $this->load->model("clientmodel");
         $this->load->library('form_validation');
@@ -15,12 +15,16 @@ class ClientController extends CI_Controller
 
     public function index()
     {
+        
         $data["clients"] = $this->clientmodel->getAll();
         $this->load->view("admin/clients/list",$data);
     }
 
     public function add()
     {
+        if($this->session->userdata('status') != "login"){
+			redirect(base_url("admin"));
+		}
         $client = $this->clientmodel;
         $validation = $this->form_validation;
         $validation->set_rules($client->rules());
@@ -44,6 +48,9 @@ class ClientController extends CI_Controller
 
     public function edit()
     {
+        if($this->session->userdata('status') != "login"){
+			redirect(base_url("admin"));
+		}
         $id = $this->uri->segment(4);
         
         $client = $this->clientmodel;
@@ -66,6 +73,10 @@ class ClientController extends CI_Controller
     
     public function delete()
     {
+        if($this->session->userdata('status') != "login"){
+			redirect(base_url("admin"));
+        }
+        
         $id = $this->uri->segment(4);
         $this->clientmodel->delete($id);
         $this->session->set_flashdata('successDelete','Berhasil dihapus');

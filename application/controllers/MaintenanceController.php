@@ -9,10 +9,10 @@ class MaintenanceController extends CI_Controller
         
 
         $this->load->model("maintenancemodel");
-        // $this->load->model("servicemodel");
-        // $this->load->model("trainingmodel");
-        // $this->load->model("clientmodel");
-        // $this->load->model("settingmodel");
+        $this->load->model("servicemodel");
+        $this->load->model("trainingmodel");
+        $this->load->model("clientmodel");
+        $this->load->model("settingmodel");
         $this->load->library('form_validation');
     }
 
@@ -58,6 +58,8 @@ class MaintenanceController extends CI_Controller
         if ($validation->run()) {
             $maintenance->save();
             $this->session->set_flashdata('success','Berhasil disimpan');
+            redirect('admin/maintenances');
+
         }
         
         $this->load->view("admin/maintenances/tambah");

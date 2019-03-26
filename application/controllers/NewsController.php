@@ -6,9 +6,9 @@ class NewsController extends CI_Controller
     public function __construct()
     {
         parent:: __construct();
-        if (! $this->session->userdata('logged')) {
-            redirect("admin/auth");
-        }
+        // if (! $this->session->userdata('logged')) {
+        //     redirect("admin/auth");
+        // }
         $this->load->model("newsmodel");
         $this->load->model("maintenancemodel");
         $this->load->model("trainingmodel");
@@ -20,9 +20,12 @@ class NewsController extends CI_Controller
 
     public function index()
     {
+        if($this->session->userdata('status') != "login"){
+			redirect(base_url("admin"));
+		}
         
-        $data["news"] = $this->newsmodel->getAll();
-        $this->load->view("admin/news/list",$data);
+        $data["news"] = $this->newsmodel->getAllJoin();
+        $this->load->view("admin/news/index",$data);
     }
 
 
@@ -51,6 +54,7 @@ class NewsController extends CI_Controller
         if ($validation->run()) {
             $news->save();
             $this->session->set_flashdata('success','Berhasil disimpan');
+            redirect('admin/news');
         }
         
         // if (isset($_POST["submit"])) {
@@ -61,7 +65,7 @@ class NewsController extends CI_Controller
         //     $this->load->view("admin/sliders/new_form");
         // }
         
-        $this->load->view("admin/news/new_form");
+        $this->load->view("admin/news/tambah");
         
     }
 
@@ -76,22 +80,33 @@ class NewsController extends CI_Controller
         if ($validation->run()) {
             $news->update();
             $this->session->set_flashdata('success','Berhasil update');
-            redirect('admin/news');
+            // redirect('admin/news');
             
         }
         
         $data["news"]= $news->getById($id);
         if(!$data["news"]) show_404();
-        $this->load->view("admin/news/edit_form", $data);
+        $this->load->view("admin/news/edit", $data);
 
     }
+
+    public function update()
+    {
+        $news = $this->newsmodel;
+        $news->update();
+            $this->session->set_flashdata('success','Berhasil update');
+            redirect('admin/news');
+
+    }
+
+
     
     
-    public function delete()
+    public function hapus()
     {
         $id = $this->uri->segment(4);
         $this->newsmodel->delete($id);
-        $this->session->set_flashdata('successDelete','Berhasil dihapus');
+        $this->session->set_flashdata('success','Berhasil dihapus');
         redirect('admin/news');
     }
 
