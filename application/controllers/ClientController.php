@@ -17,7 +17,7 @@ class ClientController extends CI_Controller
     {
         
         $data["clients"] = $this->clientmodel->getAll();
-        $this->load->view("admin/clients/list",$data);
+        $this->load->view("admin/clients/index",$data);
     }
 
     public function add()
@@ -42,7 +42,7 @@ class ClientController extends CI_Controller
         //     $this->load->view("admin/sliders/new_form");
         // }
         
-        $this->load->view("admin/clients/new_form");
+        $this->load->view("admin/clients/tambah");
         
     }
 
@@ -66,7 +66,7 @@ class ClientController extends CI_Controller
         
         $data["client"]= $client->getById($id);
         if(!$data["client"]) show_404();
-        $this->load->view("admin/clients/edit_form", $data);
+        $this->load->view("admin/clients/edit", $data);
 
     }
     

@@ -95,6 +95,14 @@ $route['admin/news/edit/(:any)']= "NewsController/edit/$1";
 $route['admin/news/update']= "NewsController/update";
 $route['admin/news/hapus/(:any)']= "NewsController/hapus/$1";
 
+// Clients
+$route['admin/clients']= "ClientController";
+$route['admin/clients/add']= "ClientController/add";
+$route['admin/clients/edit']= "ClientController";
+$route['admin/clients/edit/(:any)']= "ClientController/edit/$1";
+$route['admin/clients/update']= "ClientController/update";
+$route['admin/clients/hapus/(:any)']= "ClientController/hapus/$1";
+
 
 
 $route['admin/setting']='AdminController/settings';
