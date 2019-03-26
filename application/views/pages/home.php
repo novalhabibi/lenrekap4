@@ -62,9 +62,9 @@
           <div class="col-lg-12">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Maintenances</li>
-              <li data-filter=".filter-card">Services</li>
-              <li data-filter=".filter-web">Trainings</li>
+              <li data-filter=".maintenances">Maintenances</li>
+              <li data-filter=".services">Services</li>
+              <li data-filter=".trainings">Trainings</li>
             </ul>
           </div>
         </div>
@@ -78,14 +78,14 @@
           # code...
         
         ?>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="col-lg-4 col-md-6 portfolio-item maintenances">
             <div class="portfolio-wrap">
               <img src="<?= base_url() ?><?= $maintenance->gambar_maintenance ?>" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4><a href="#">App 1</a></h4>
-                <p>App</p>
+                <h5><a href="#"><?= $maintenance->nama_maintenance ?></a></h5>
+                <p></p>
                 <div>
-                  <a href="<?= base_url() ?>/assets/img/IMG_5589.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="<?= base_url() ?><?= $maintenance->gambar_maintenance ?>" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -99,18 +99,42 @@
         <?php
         $data = $this->db->get("services")->result();
 
-        foreach ($data as $maintenance) {
+        foreach ($data as $service) {
           # code...
         
         ?>
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="col-lg-4 col-md-6 portfolio-item services">
             <div class="portfolio-wrap">
-              <img src="<?= base_url() ?>/assets/img/IMG_5589.jpg" class="img-fluid" alt="">
+              <img src="<?= base_url() ?><?= $service->gambar_service ?>" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4><a href="#">App 1</a></h4>
+                <h5><a href="#"><?= $service->nama_service ?></a></h5>
                 <p>App</p>
                 <div>
-                  <a href="<?= base_url() ?>/assets/img/IMG_5589.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="<?= base_url() ?><?= $service->gambar_service ?>" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <?php
+        }
+        ?>
+
+        <?php
+        $data = $this->db->get("trainings")->result();
+
+        foreach ($data as $training) {
+          # code...
+        
+        ?>
+          <div class="col-lg-4 col-md-6 portfolio-item trainings">
+            <div class="portfolio-wrap">
+              <img src="<?= base_url() ?><?= $training->gambar_training ?>" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h5><a href="#"><?= $training->nama_training ?></a></h5>
+                <p>App</p>
+                <div>
+                  <a href="<?= base_url() ?><?= $training->gambar_training ?>" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>

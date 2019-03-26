@@ -12,54 +12,21 @@
         </div>
 
         <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
+        <?php
+        $data = $this->db->get("clients")->result();
 
+        foreach ($data as $client) {
+
+        ?>
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/akademiperkretaapian.png" class="img-fluid" alt="">
+              <img src="<?= base_url() ?><?= $client->icon_client ?>" class="img-fluid" alt="">
             </div>
           </div>
+        <?php
+        }
+        ?>
           
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/Angkasapura.png" class="img-fluid" alt="">
-            </div>
-          </div>
-        
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/Direktoratkretaapi.png" class="img-fluid" alt="">
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/KAI.png" class="img-fluid" alt="">
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/LEN.png" class="img-fluid" alt="">
-            </div>
-          </div>
-        
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/LRS.png" class="img-fluid" alt="">
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/client-7.png" class="img-fluid" alt="">
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?= base_url() ?>/assets/img/clients/client-8.png" class="img-fluid" alt="">
-            </div>
-          </div>
 
         </div>
 
@@ -75,6 +42,7 @@
 
         <div class="section-header">
           <h3>Contact Us</h3>
+          <?php $setting = $this->db->get_where("setting",["id"=>1])->row(); ?>
         </div>
 
         <div class="row wow fadeInUp">
@@ -89,15 +57,15 @@
             <div class="row">
               <div class="col-md-5 info">
                 <i class="ion-ios-location-outline"></i>
-                <p>A108 Adam Street, NY 535022</p>
+                <p><?= $setting->alamat ?></p>
               </div>
               <div class="col-md-4 info">
                 <i class="ion-ios-email-outline"></i>
-                <p>info@example.com</p>
+                <p><?= $setting->email ?></p>
               </div>
               <div class="col-md-3 info">
                 <i class="ion-ios-telephone-outline"></i>
-                <p>+1 5589 55488 55</p>
+                <p><?= $setting->no_telpon ?></p>
               </div>
             </div>
 

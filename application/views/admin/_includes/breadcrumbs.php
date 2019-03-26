@@ -1,6 +1,21 @@
+
+        <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+        <?php foreach ($this->uri->segments as $segment):?>
+            <?php
+                $url = substr($this->uri->uri_string,0, strpos($this->uri->uri_string, $segment)).$segment;
+                $is_active = $url == $this->uri->uri_string;
+            ?>
+          <li class="breadcrumb-item <?= $is_active ?'active':'' ?>">
+            <?php if ($is_active): ?>
+                <?= ucfirst($segment) ?>
+
+            <?php else: ?>
+            <a href="<?= site_url($url) ?>"><?= ucfirst($segment) ?></a>
           </li>
-          <li class="breadcrumb-item active">Overview</li>
+
+          <?php endif;?>
+        
+        <?php endforeach; ?>
+
         </ol>

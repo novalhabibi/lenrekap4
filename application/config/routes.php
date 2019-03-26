@@ -63,6 +63,11 @@ $route['admin/logout']= "AdminController/logout";
 $route['admin/cek_login']= "AdminController/cek_login";
 
 
+// Trainings
+$route['admin/trainings']= "TrainingController";
+$route['admin/trainings/tambah']= "TrainingController/tambah";
+
+
 
 $route['maintenances']='FrontendController/maintenances';
 
