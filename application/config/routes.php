@@ -66,6 +66,18 @@ $route['admin/cek_login']= "AdminController/cek_login";
 // Trainings
 $route['admin/trainings']= "TrainingController";
 $route['admin/trainings/tambah']= "TrainingController/tambah";
+$route['admin/trainings/edit']= "TrainingController";
+$route['admin/trainings/edit/(:any)']= "TrainingController/edit/$1";
+$route['admin/trainings/update']= "TrainingController/update";
+$route['admin/training/hapus/(:any)']= "TrainingController/hapus/$1";
+
+// Maintenances
+$route['admin/maintenances']= "MaintenanceController";
+$route['admin/maintenances/tambah']= "MaintenanceController/tambah";
+$route['admin/maintenances/edit']= "MaintenanceController";
+$route['admin/maintenances/edit/(:any)']= "MaintenanceController/edit/$1";
+$route['admin/maintenances/update']= "MaintenanceController/update";
+$route['admin/maintenance/hapus/(:any)']= "MaintenanceController/hapus/$1";
 
 
 

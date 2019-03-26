@@ -1,47 +1,54 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class TrainingModel extends CI_Model
+class MaintenanceModel extends CI_Model
 {
-    private $_table ="trainings";
+    private $_table ="maintenances";
 
-    public $nama_training;
+    public $nama_maintenance;
     public $deskripsi;
-    public $gambar_training;
-    public $link_training;
+    public $gambar_maintenance;
+    public $link_maintenance;
 
     private function _uploadGambar()
     {
-        $tujuan ="./uploads/trainings/";
+        $tujuan ="./uploads/maintenances/";
         $config['upload_path']          = $tujuan;
         $config['allowed_types']        = 'gif|jpg|png';
-        $config['file_name']            =$this->link_training;
+        $config['file_name']            =$this->link_maintenance;
         $config['overwrite']        = true;
+
+        // $handle = ($_FILES["gambar"]["tmp_name"]);
+        // $config['file_name']        = $config['full_path'];
         $this->load->library('upload', $config);
 
-        if ($this->upload->do_upload('gambar_training')) {
+        if ($this->upload->do_upload('gambar_maintenance')) {
             # code...
             return $nama = $tujuan.$this->upload->data('file_name');
             // $lokasi = "/uploads/news/".$nama;
         }
 
         return "no-image.png";
-  
-    }
 
+    }
 
     private function _hapusGambar($id)
     {
-        $training = $this->getById($id);
-        $filename = explode(".",$training->link_training)[0];
-        return array_map('unlink', glob(FCPATH."uploads/trainings/$filename.*"));   
+        $maintenance = $this->getById($id);
+        $filename = explode(".",$maintenance->link_maintenance)[0];
+
+        return array_map('unlink', glob(FCPATH."uploads/maintenances/$filename.*"));
+
+        
     }
+
+
 
     public function rules()
     {
         return[
-            ['field'=>'nama_training',
-             'label'=>'nama_training',
+            ['field'=>'nama_maintenance',
+             'label'=>'nama_maintenance',
              'rules'=>'required'],
 
             ['field'=>'deskripsi',
@@ -56,14 +63,20 @@ class TrainingModel extends CI_Model
         return $this->db->get($this->_table)->result();
     }
 
-    public function trainingpertama()
+    public function maintenancepertama()
     {
         $this->db->order_by('id', 'DESC');
     //    return $this->db->get_where($this->_table,["status"=>1])->row();
        return $this->db->get_where($this->_table)->row();
     }
 
-    public function fortraining()
+    public function forMaintenance()
+    {
+        return $this->db->get($this->_table,4,0)->result();
+        
+    }
+
+    public function MaintenanceSingle()
     {
         return $this->db->get($this->_table,4,0)->result();
         
@@ -77,16 +90,16 @@ class TrainingModel extends CI_Model
 
     public function getByLink($link)
     {
-        return $this->db->get_where($this->_table,["link_training"=>$link])->row();
+        return $this->db->get_where($this->_table,["link_maintenance"=>$link])->row();
     }
 
     public function save()
     {
 
         $post = $this->input->post();
-        $this->nama_training=$post["nama_training"];
-        $this->link_training=url_title($post["nama_training"], 'dash', TRUE);
-        $this->gambar_training=$this->_uploadGambar();
+        $this->nama_maintenance=$post["nama_maintenance"];
+        $this->link_maintenance=url_title($post["nama_maintenance"], 'dash', TRUE);
+        $this->gambar_maintenance=$this->_uploadGambar();
         $this->deskripsi=$post["deskripsi"];
 
         
@@ -97,13 +110,13 @@ class TrainingModel extends CI_Model
     {
         $post = $this->input->post();
         $this->id= $post["id"];
-        $this->nama_training=$post["nama_training"];
-        $this->link_training=url_title($post["nama_training"], 'dash', TRUE);
+        $this->nama_maintenance=$post["nama_maintenance"];
+        $this->link_maintenance=url_title($post["nama_maintenance"], 'dash', TRUE);
 
-        if (!empty($_FILES["gambar_training"]["name"])) {
-            $this->gambar_training = $this->_uploadGambar();
+        if (!empty($_FILES["gambar_maintenance"]["name"])) {
+            $this->gambar_maintenance = $this->_uploadGambar();
         } else {
-            $this->gambar_training = $post["gambar_lama"];
+            $this->gambar_maintenance = $post["gambar_lama"];
         }
         
 
@@ -115,8 +128,6 @@ class TrainingModel extends CI_Model
     {
         $this->_hapusGambar($id);
         return $this->db->delete($this->_table, array('id'=>$id));
-        //add flash data 
-        //  $this->session->set_flashdata('data','data berhasil di klik.');
         // echo $id;
     }
 

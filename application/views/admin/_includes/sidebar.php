@@ -12,9 +12,9 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="<?= site_url('admin/maintenances') ?>">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
+          <span>Maintenances</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="tables.html">

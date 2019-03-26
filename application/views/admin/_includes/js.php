@@ -16,3 +16,5 @@
   <!-- Demo scripts for this page-->
   <script src="<?= base_url() ?>/js/demo/datatables-demo.js"></script>
   <script src="<?= base_url() ?>/js/demo/chart-area-demo.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+

@@ -16,5 +16,5 @@
 
   <!-- Custom styles for this template-->
   <link href="<?= base_url() ?>/css/sb-admin.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 </head>

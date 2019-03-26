@@ -29,23 +29,29 @@
                                 <div class="col-lg-6">
                                 <?php echo validation_errors(); ?>
 
-                                <?php echo form_open_multipart('admin/trainings/tambah'); ?>
+                                <?php echo form_open_multipart('admin/trainings/update'); ?>
                                     
                                         <div class="form-group">
                                             <label>Nama Training</label>
-                                            <input class="form-control" name="nama_training" placeholder="Nama training">
+                                            <input type="hidden" name="id" value="<?= $training->id ?>">
+                                            <input class="form-control" name="nama_training" value="<?= $training->nama_training ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Link</label>
-                                            <input class="form-control" disabled name="link_training" placeholder="link training">
+                                            <input  class="form-control" disabled name="link_training" value="<?= $training->link_training ?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Gambar training</label>
+                                            <input type="hidden" name="gambar_lama" value="<?= $training->gambar_training ?>">
+                                            <img src="<?= base_url() ?><?= $training->gambar_training ?>" alt="No Image" width="50%" height="50%">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Ganti gambar training</label>
                                             <input type="file" accept="image/*" name="gambar_training">
                                         </div>
                                         <div class="form-group">
                                             <label>Text area</label>
-                                            <textarea class="form-control" name="deskripsi" rows="3"></textarea>
+                                            <textarea class="form-control" name="deskripsi" rows="3"><?= $training->deskripsi ?></textarea>
                                         </div>
                                         <button type="submit" name="submit" class="btn btn-info">Simpan</button>
                                         
