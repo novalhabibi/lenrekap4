@@ -95,6 +95,9 @@ $route['admin/news/edit/(:any)']= "NewsController/edit/$1";
 $route['admin/news/update']= "NewsController/update";
 $route['admin/news/hapus/(:any)']= "NewsController/hapus/$1";
 
+
+
+
 // Clients
 $route['admin/clients']= "ClientController";
 $route['admin/clients/tambah']= "ClientController/add";
@@ -116,5 +119,7 @@ $route['admin/sliders/hapus/(:any)']= "SliderController/hapus/$1";
 $route['admin/setting']='AdminController/settings';
 $route['admin/update_setting']='AdminController/update_setting';
 $route['maintenances']='FrontendController/maintenances';
+$route['news']='FrontendController/news';
+$route['news/(:any)']='FrontendController/singlenews/$1';
 
 

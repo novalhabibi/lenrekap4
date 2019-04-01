@@ -102,23 +102,23 @@
 
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          <li class="active"><a href="<?=base_url() ?>">Home</a></li>
-          <li class="drop-down"><a href="#">Profile</a>
+          <li class="<?= $this->uri->segment(1) == "" ?'active':'' ; ?>"><a href="<?=base_url() ?>">Home</a></li>
+          <li class="drop-down <?= $this->uri->segment(1) == "profile" ?'active':'' ; ?>"><a href="#">Profile</a>
             <ul>
-                <li><a href="<?= base_url('profile') ?>">Profile dan Riwayat Singkat</a></li>
+                <li class="<?= $this->uri->segment(1) == "profile" ?'active':'' ; ?>"><a href="<?= base_url('profile') ?>">Profile dan Riwayat Singkat</a></li>
                 <li><a href="#">Dewan Komisaris</a></li>
                 <li><a href="#">Dewan Direksi</a></li>
                 <li><a href="#">Struktur Organisasi</a></li>
             </ul>
           </li>
-          <li class="drop-down"><a href="#">Products</a>
+          <li class="drop-down <?= $this->uri->segment(1) == "maintenances" ?'active':'' ; ?>"><a href="#">Products</a>
             <ul>
-                <li><a href="<?=base_url('maintenances') ?>">Maintenances</a></li>
+                <li class="<?= $this->uri->segment(1) == "maintenances" ?'active':'' ; ?>"><a href="<?=base_url('maintenances') ?>">Maintenances</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Trainings</a></li>
             </ul>
           </li>
-          <li><a href="#contact">News</a></li>
+          <li><a href="<?= site_url('news') ?>">News</a></li>
           <li><a href="#contact">Contact Us</a></li>
         </ul>
       </nav><!-- .main-nav -->
